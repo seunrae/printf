@@ -24,13 +24,24 @@ int handle_string(va_list args)
 	return (_puts(str));
 }
 /**
+ * handle_int - handle %d and %i specifiers
+ * @args: inpur parameter
+ * Return: Number of characters printed
+ */
+int handle_int(va_list args)
+{
+	int num = va_arg(args, int);
+
+	return (_putint(num));
+}
+/**
  * is_valid - check if a character is a valid format specifier
  * @c: character to check
  * Return: 1 if valid 0 if otherwise.
  */
 int is_valid(char c)
 {
-	if (c == 'c' || c == 's' || c == '%' || c == 'b')
+	if (c == 'c' || c == 's' || c == '%' || c == 'b' || c == 'd' || c == 'i')
 		return (1);
 	return (0);
 }
@@ -50,6 +61,8 @@ int handle_specifier(char specifier, va_list args)
 		_stdout += handle_string(args);
 	else if (specifier == '%')
 		_stdout += _putchar('%');
+	else if (specifier == 'd' || specifier == 'i')
+		_stdout += handle_int(args);
 	else
 		return (-1);
 	return (_stdout);
