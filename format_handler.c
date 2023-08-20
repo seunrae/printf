@@ -63,6 +63,8 @@ int handle_specifier(char specifier, va_list args)
 		_stdout += _putchar('%');
 	else if (specifier == 'd' || specifier == 'i')
 		_stdout += handle_int(args);
+	else if (specifier == 'b')
+		_stdout += handle_binary(args);
 	else
 		return (-1);
 	return (_stdout);
