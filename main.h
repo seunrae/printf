@@ -15,4 +15,7 @@ int handle_unsignedint(va_list args);
 int _putoctal(unsigned int num);
 int putoctal_recursive(unsigned int num, int _stdout);
 int handle_octal(va_list args);
+int _puthex(unsigned int num, int uppercase);
+int puthex_recursive(unsigned int num, int _stdout, int uppercase);
+int handle_hex(va_list args, int uppercase);
 #endif
