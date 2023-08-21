@@ -21,3 +21,16 @@ int handle_binary(va_list args)
 	}
 	return (_stdout);
 }
+/**
+ * handle_unsignedint - Handle %u format specifier for unsigned int
+ * @args: the va_list
+ *
+ * Return: Number of characters printed
+ */
+int handle_unsignedint(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int _stdout = 0;
+
+	return (_stdout += _putunsignedint(num));
+}

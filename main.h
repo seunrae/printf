@@ -9,4 +9,7 @@ int handle_specifier(char specifier, va_list args);
 int _putint(int num);
 int handle_binary(va_list args);
 int _putbin(unsigned int num);
+int _putunsignedint(unsigned int num);
+int putunsigned_recursive(unsigned int num, int _stdout);
+int handle_unsignedint(va_list args);
 #endif
