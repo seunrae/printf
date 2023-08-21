@@ -34,3 +34,16 @@ int handle_unsignedint(va_list args)
 
 	return (_stdout += _putunsignedint(num));
 }
+/**
+ * handle_octal - Handle %o format specifier for octal
+ * @args: the va_list
+ *
+ * Return: Number of characters printed
+ */
+int handle_octal(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int _stdout = 0;
+
+	return (_stdout += _putoctal(num));
+}

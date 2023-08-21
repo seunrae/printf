@@ -42,7 +42,7 @@ int handle_int(va_list args)
 int is_valid(char c)
 {
 	if (c == 'c' || c == 's' || c == '%' || c == 'b'
-			|| c == 'd' || c == 'i' || c == 'u')
+			|| c == 'd' || c == 'i' || c == 'u' || c == 'o')
 		return (1);
 	return (0);
 }
@@ -68,6 +68,8 @@ int handle_specifier(char specifier, va_list args)
 		_stdout += handle_binary(args);
 	else if (specifier == 'u')
 		_stdout += handle_unsignedint(args);
+	else if (specifier == 'o')
+		_stdout += handle_octal(args);
 	else
 		return (-1);
 	return (_stdout);
