@@ -12,4 +12,7 @@ int _putbin(unsigned int num);
 int _putunsignedint(unsigned int num);
 int putunsigned_recursive(unsigned int num, int _stdout);
 int handle_unsignedint(va_list args);
+int _putoctal(unsigned int num);
+int putoctal_recursive(unsigned int num, int _stdout);
+int handle_octal(va_list args);
 #endif
