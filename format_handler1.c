@@ -47,3 +47,16 @@ int handle_octal(va_list args)
 
 	return (_stdout += _putoctal(num));
 }
+/**
+ * handle_hex - Handle %X and %x format specifiers for hexadecimal
+ * @args: the va_list
+ * @uppercase: hex specifier (X for uppercase)
+ * Return: Number of characters printed
+ */
+int handle_hex(va_list args, int uppercase)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int _stdout = 0;
+
+	return (_stdout += _puthex(num, uppercase));
+}
