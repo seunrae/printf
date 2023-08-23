@@ -32,7 +32,15 @@ int handle_unsignedint(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	int _stdout = 0;
 
-	return (_stdout += _putunsignedint(num));
+	if (num == 0)
+	{
+		_stdout += _putchar('0');
+	}
+	else
+	{
+		_stdout += _putunsignedint(num);
+	}
+	return (_stdout);
 }
 /**
  * handle_octal - Handle %o format specifier for octal
@@ -45,7 +53,15 @@ int handle_octal(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	int _stdout = 0;
 
-	return (_stdout += _putoctal(num));
+	if (num == 0)
+	{
+		_stdout += _putchar('0');
+	}
+	else
+	{
+		_stdout += _putoctal(num);
+	}
+	return (_stdout);
 }
 /**
  * handle_hex - Handle %X and %x format specifiers for hexadecimal
@@ -58,5 +74,13 @@ int handle_hex(va_list args, int uppercase)
 	unsigned int num = va_arg(args, unsigned int);
 	int _stdout = 0;
 
-	return (_stdout += _puthex(num, uppercase));
+	if (num == 0)
+	{
+		_stdout += _putchar('0');
+	}
+	else
+	{
+		_stdout += _puthex(num, uppercase);
+	}
+	return (_stdout);
 }
